@@ -1,0 +1,53 @@
+[project]
+name = "git-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "dotenv>=0.9.9",
+    "gitpython>=3.1.46",
+    "loguru>=0.7.3",
+    "pathlib>=1.0.1",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.1",
+    "requests>=2.32.5",
+    "rich>=14.3.2",
+    "strands-agents[ollama]>=1.25.0",
+    "strands-agents-tools[diagram]>=0.2.20",
+    "pytest>=8.0.0",
+    "pytest-mock>=3.12.0",
+]
+
+[project.scripts]
+git-agent = "git_agent.cli:main"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.ruff.lint]
+select = [
+    "F",      # Pyflakes (Errores lógicos)
+    "E", "W", # Pycodestyle (Estilo PEP8)
+    "I",      # Isort (Orden de imports)
+    "N",      # Pep8-naming (Convenciones de nombres)
+    "UP",     # Pyupgrade (Actualiza sintaxis vieja a Python 3.10+)
+    "B",      # Bugbear (Errores de diseño probables)
+    "SIM",    # Simplicity (Te ayuda a simplificar ifs y returns)
+    "RUF",    # Reglas propias de Ruff
+    "TID",    # Tidy imports (Evita imports relativos feos)
+    "FA",     # Plugin 'flake8-future-annotations'
+]
+
+ignore = ["E501"]  # Ignorar líneas largas
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = true
+
+[dependency-groups]
+dev = [
+    "debugpy>=1.8.20",
+]

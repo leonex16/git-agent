@@ -1,0 +1,6 @@
+COLOR_PRIMARY = "cyan"
+COLOR_SUCCESS = "green"
+COLOR_WARNING = "yellow"
+COLOR_ERROR = "red"
+COLOR_NEUTRAL = "white"
+COLOR_DIM = "grey50"
