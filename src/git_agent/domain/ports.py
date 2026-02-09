@@ -1,7 +1,13 @@
 from abc import ABC, abstractmethod
 from typing import Protocol
 
-from git_agent.domain.models import CodeReviewResult, FileContext, GitDiff, LintScore, ReviewContext
+from git_agent.domain.models import (
+    CodeReviewResult,
+    FileContext,
+    GitDiff,
+    LintScore,
+    ReviewContext,
+)
 from git_agent.domain.result import Result
 
 

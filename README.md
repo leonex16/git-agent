@@ -259,15 +259,3 @@ This project is engineered as a reference implementation of **Clean Architecture
 - **Infrastructure Layer** (`src/git_agent/infra`): Concrete implementations of ports (Git, FS, Ollama Client, Linters).
 - **Presentation Layer** (`src/git_agent/ui`): Rich-based TUI for output.
 
-## 🤝 Contributing
-
-Contributions are welcome! Please follow the existing architectural patterns (SOLID/DDD) when submitting PRs.
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Ensure code passes `ruff` and `pyright`.
-4. Submit a Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License.

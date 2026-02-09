@@ -23,7 +23,6 @@ from git_agent.domain.models import CodeReviewResult, ReviewContext
 from git_agent.infra.fs import FSAdapter
 from git_agent.infra.git import GitAdapter
 from git_agent.infra.linter import LinterAdapter
-from git_agent.infra.strands.agent import StrandsCodeReviewAgent
 from git_agent.ui.reporter import TerminalReporter
 
 reporter = TerminalReporter()
@@ -41,9 +40,8 @@ def _run_model_review(
 ) -> ModelRunResult:
     start = time.perf_counter()
 
-    # llm_client = OllamaLLMProvider(model=model)
-    # agent = OllamaCodeReviewAgent(model=model)
-    agent = StrandsCodeReviewAgent(model=model)
+    agent = OllamaCodeReviewAgent(model=model)
+    # agent = StrandsCodeReviewAgent(model=model)
     review = agent.review_with_context(ctx, uctx)
 
     duration = time.perf_counter() - start

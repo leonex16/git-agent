@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import asdict, is_dataclass
 import json
 import os
 
@@ -10,13 +9,12 @@ from strands import Agent
 from strands.agent import AgentResult
 from strands.models.ollama import OllamaModel
 
-from git_agent.domain.models import CodeReviewResult
+from git_agent.domain.models import CodeReviewResult, ReviewContext
 from git_agent.domain.ports import CodeReviewAgent
 from git_agent.domain.prompts import SENIOR_DEV_PROMPT
 from git_agent.infra.hooks.logging import LoggingHook
 from git_agent.infra.serialization import EnhancedJSONEncoder
 from git_agent.infra.strands.tools import Tools
-from git_agent.domain.models import ReviewContext
 
 
 class StrandsCodeReviewAgent(CodeReviewAgent):
